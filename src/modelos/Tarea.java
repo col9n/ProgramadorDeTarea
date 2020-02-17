@@ -21,34 +21,34 @@ public class Tarea {
         this.realizado=realizado;
     }
 
-    protected LocalDate getFecha() {
+    public LocalDate getFecha() {
         return fecha;
     }
 
-    protected void setFecha(LocalDate fecha) {
+    public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
     }
 
-    protected int getHora() { return hora; }
+    public int getHora() { return hora; }
 
-    protected void setHora(int hora) { this.hora = hora; }
+    public void setHora(int hora) { this.hora = hora; }
 
-    protected int getMin() { return min; }
+    public int getMin() { return min; }
 
-    protected void setMin(int min) { this.min = min; }
+    public void setMin(int min) { this.min = min; }
 
-    protected String getTextoTarea() {
+    public String getTextoTarea() {
         return textoTarea;
     }
 
-    protected void setTextoTarea(String textoTarea) {
+    public void setTextoTarea(String textoTarea) {
         this.textoTarea = textoTarea;
     }
 
-    protected Boolean getRealizado() {
+    public Boolean getRealizado() {
         return realizado;
     }
 
-    protected void setRealizado(Boolean realizado) {
+    public void setRealizado(Boolean realizado) {
         this.realizado = realizado;
     }}

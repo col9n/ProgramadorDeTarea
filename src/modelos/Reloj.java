@@ -69,11 +69,8 @@ public class Reloj extends Label {
                     @Override
                     public void run() {
                         actualizarHora();
-                        Tarea tarea =comprobar();
-                        if(tarea!=null) {
+                       comprobar();
 
-
-                        }
 
                     }
                 });
@@ -81,7 +78,7 @@ public class Reloj extends Label {
         }, 1000, 1000);
     }
 
-    private Tarea comprobar() {
+    private void comprobar() {
         Tarea tareaAdevolver=null;
         LocalDate today = LocalDate.now();
        Date time= new Date();
@@ -96,14 +93,15 @@ public class Reloj extends Label {
                         if (tarea.getMin() == min) {
                             tareaAdevolver = tarea;
                             tarea.setRealizado(true);
-                            evento.inicioTarea(tarea);
+                            borrarTarea(tarea);
+                            evento.inicioTarea(tareaAdevolver);
                         }
                     }
                 }
             }
 
         }
-        return tareaAdevolver;
+
     }
 
     public void registrarTarea(Tarea tarea){
