@@ -54,8 +54,7 @@ public class Reloj extends Label {
 
 
         setText(date);
-        Date date1 = new Date();
-        System.out.println(date1);
+
     }
 
     public void startSec() {
