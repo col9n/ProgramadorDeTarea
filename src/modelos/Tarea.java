@@ -2,11 +2,11 @@ package modelos;
 
 
 
+import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.Date;
-import java.util.GregorianCalendar;
 
-public class Tarea {
+
+public class Tarea implements Serializable {
     private LocalDate fecha;
     private int hora;
     private int min;

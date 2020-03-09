@@ -19,7 +19,9 @@ public class Reloj extends Label {
     private String pattern="HH:mm:ss";
     private Boolean formato24H=true;
 
-    private ArrayList<Tarea> listaTarea=new ArrayList<Tarea>();
+    private   Timer timer;
+
+    private List<Tarea> listaTarea=Collections.synchronizedList(new ArrayList<>());
 
     static final String patro_formato24 = "HH:mm:ss";
     static final String patro_formato12 = "hh:mm:ss";
@@ -58,7 +60,7 @@ public class Reloj extends Label {
     }
 
     public void startSec() {
-        Timer timer = new Timer();
+        timer = new Timer();
 
 
         timer.schedule(new TimerTask() {
@@ -86,7 +88,7 @@ public class Reloj extends Label {
 
         for(Tarea tarea : listaTarea)
         {
-            if(tarea.getRealizado()!=true) {
+            if(!tarea.getRealizado()) {
                 if (tarea.getFecha().equals(today)) {
                     if (tarea.getHora() == hour) {
                         if (tarea.getMin() == min) {
@@ -101,6 +103,15 @@ public class Reloj extends Label {
 
         }
 
+    }
+
+    public void terminarReloj(){
+        this.timer.cancel();
+        this.timer.purge();
+    }
+
+    public void actualizarLista(List<Tarea> listaTarea){
+        this.listaTarea=listaTarea;
     }
 
     public void registrarTarea(Tarea tarea){
