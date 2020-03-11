@@ -70,7 +70,7 @@ public class Reloj extends Label {
                     @Override
                     public void run() {
                         actualizarHora();
-                       comprobar();
+                        comprobar();
 
 
                     }
@@ -82,7 +82,7 @@ public class Reloj extends Label {
     private void comprobar() {
         Tarea tareaAdevolver=null;
         LocalDate today = LocalDate.now();
-       Date time= new Date();
+        Date time= new Date();
         int hour = time.getHours();
         int min = time.getMinutes();
 
